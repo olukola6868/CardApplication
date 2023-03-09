@@ -1,0 +1,42 @@
+@model IList<Role>
+<div>
+    <h1>Roles Forum</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Details
+            </th>
+            <th>
+                UpdateRole
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => role.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => role.Description)
+                </td>
+                <td>
+                    <a asp-action="UpdateRole" asp-route-id="@role.Id"> Update</a>
+                </td>
+                <td>
+                    <a asp-action="UpdateRole" asp-route-id="@role.Id"> Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

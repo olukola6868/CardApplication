@@ -1,0 +1,60 @@
+@model HarnyCardApplication.Dtos.UpdateCustomerRequestModel
+
+@if (ViewData != null)
+{
+    <h2>@TempData["success"]</h2>
+}
+
+<body style="background-color: rgb(255, 255, 255);">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] AirtimeApp</title>
+
+    </head>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" card col-md-6">
+                <div class="card-body " style="background-color: rgb(252, 249, 249);">
+                    <div class="bg-light">
+                        <h1 class="tagcolor" style="color:rgb(197, 148, 148)">Update</h1>
+                        <p class="tagcolor" style="color:rgb(197, 148, 148))">Please fill in this form to Update.</p>
+                        <hr class="tagcolor" style="color:rgb(197, 148, 148)">
+                    </div>
+                    <form asp-action="Update">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label asp-for="FirstName" class="control-label"></label>
+                                <input asp-for="FirstName" class="form-control"/>
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label asp-for="LastName" class="control-label"></label>
+                                <input asp-for="LastName" class="form-control"/>
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label asp-for="PhoneNumber" class="control-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control"/>
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div><br>
+                            <div class="form-group ">
+                                <input style="border-radius: 40px;" href="#myModal" type="submit" value="Update"
+                                    class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

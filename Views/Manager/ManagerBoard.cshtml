@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover {
+            cursor: pointer;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .first:hover{
+            background-color: rgb(70, 15, 221);
+        }
+        .second:hover{
+            background-color: rgb(68, 153, 68);
+        }
+        .third:hover{
+            background-color: cyan;
+        }
+        .fourth:hover{
+            background-color: rgb(196, 80, 80);
+        }
+        .fifth:hover{
+            background-color: rgb(102, 170, 230);
+        }
+
+        button {
+            height: 100px;
+            width: 200px;
+            border-radius: 15px;
+        }
+
+        h4 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="my-container">
+        <form>
+            @if (@TempData["Success"] != null)
+            {
+                <h4 style="background-color: white;">@TempData["Success"]</h4>
+            }
+            <h4 style="color: white !important;">Manager LANDING PAGE</h4>
+            <div class="button">
+                <button class="fifth"><a asp-controller="Network" asp-action="Create" class="mang-a">Create Network</a></button>
+                <button class="first"><a asp-controller="Category" asp-action="Create" class="mang-a">Create Category</a></button>
+                <button class="second"><a asp-controller="Card" asp-action="CreateCard" class="mang-a">Create Card</a></button>
+                <button class="third"><a asp-controller="Customer" asp-action="GetAll" class="mang-a">View All Customers</a></button>
+                <button class="fourth"><a asp-controller="Card" asp-action="GetAll" class="mang-a">View All Cards</a></button>
+           
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+@model HarnyCardApplication.Dtos.BaseResponse<IEnumerable<HarnyCardApplication.Dtos.CardDto>>
+<CardDto>
+    <div>
+        <h1 style="    color: white !important;">Card Forum</h1>
+    </div>
+
+    <table class="table" style="color: rgb(255, 255, 255) !important;">
+        <thead>
+            <tr>
+                <th>
+                    NetworkName
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Pin
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var card  in Model.Data)
+        {
+        <tr style="font-size: medium;">
+            <td>
+                @Html.DisplayFor(modelItem => card.CategoryPrice)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => card.NetworkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => card.Pin)
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>

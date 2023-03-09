@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		button:hover {
+			cursor: pointer;
+			justify-content: space-between;
+			gap: 15px;
+			background-color: rgb(24, 13, 83);
+		}
+
+		button {
+			height: 100px;
+			width: 300px;
+			border-radius: 15px;
+		}
+
+		h4 {
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="my-container">
+		<form>
+			<h4 style="color: white !important;">CUSTOMER LANDING PAGE</h4>
+			<button><a asp-action="FundWallet" asp-controller="Customer">Fund Wallet</a></button>
+			<button><a asp-action="BuyCard" asp-controller="Card">Buy Card</a></button>
+			<button><a asp-action="Get" asp-controller="Customer">Profile</a></button>
+			<button><a asp-action="GetCustomerCards" asp-controller="Card">History</a></button>
+		</form>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+@model HarnyCardApplication.Dtos.FundWalletRequestModel;
+
+<body style="background-color: rgb(255, 255, 255);">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] AirtimeApp</title>
+
+    </head>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" card col-md-6">
+                <div class="card-body " style="background-color: rgb(255, 255, 255);">
+                    <div class="bg-light">
+                        <h1 class="tagcolor" style="color:rgb(158, 157, 178)">FUNDWALLET</h1>
+                        <p class="tagcolor" style="color:rgb(52, 46, 224)Enter Amount You Want To Fund In YOur Wallet</p>
+                        <hr class="tagcolor" style="color:rgb(52, 46, 224)">
+                    </div>
+                    <form asp-action="FundWallet">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-row">
+                             <div class="form-group col-sm-6">
+                                <label asp-for="Amount" class="control-label"></label>
+                                <input asp-for="Amount" class="form-control" />
+                                <span asp-validation-for="Amount" class="text-danger"></span>
+                            </div><br>
+                             <div class="form-group " style="background-color: rgb(227, 227, 229);">
+                                <input style="border-radius: 40px;" href="#myModal" type="submit" value="pay"
+                                    class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                            </div>
+                        </div>
+                        
+                    </form>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

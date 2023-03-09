@@ -1,0 +1,50 @@
+@model IEnumerable<HarnyCardApplication.Dtos.CustomerDto>
+<div>
+    <h1>Customers Forum</h1>
+</div>
+
+
+<table class="table" style="    color: white !important;">
+    <thead>
+        <tr>
+
+            <th>
+                FirstName
+            </th>
+            <th>
+               LastName
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+               PhoneNumber
+            </th>
+            <th>
+               Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer  in Model.ToList())
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => customer.FirstName)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => customer.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => customer.Email)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => customer.PhoneNumber)
+            </td>
+            <td>
+                <a asp-action="Get" asp-route-id="@customer.Id"> Get</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

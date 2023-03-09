@@ -1,0 +1,51 @@
+<style>
+    .Down-Page {
+        font-size: larger;
+    }
+</style>
+
+<body style="background-color: rgb(255, 252, 252);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" card col-md-6">
+                <div class="card-body " style="background-color: rgb(134, 117, 158);">
+                    <div class="bg-light">
+                        <h1 class="tagcolor" style="color:rgb(125, 105, 155)">Profile</h1>
+                        <p class="tagcolor" style="color: rgb(197, 148, 148)">All your profiles are here and you can
+                            also update your Profile</p>
+                        <hr class="tagcolor" style="color: rgb(197, 148, 148)">
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <h4 style="color: white;">FirstName: @Model.Data.FirstName</h4>
+                            </div><br>
+                            <div>
+                                <h4 style="color: white;">LastName: @Model.Data.LastName</h4>
+                            </div><br>
+                            <div>
+                                <h4 style="color: white;">Email: @Model.Data.Email</h4>
+                            </div><br>
+                            <span>
+                                <h4 style="color: white;">PhoneNumber: @Model.Data.PhoneNumber</h4>
+                        </div><br>
+                        <div>
+                            <h4 style="color: white;">Wallet: @Model.Data.Wallet</h4>
+                            </span>
+                        </div>
+                        <div style="display: flex;gap:25%">
+                            &nbsp;
+                            <div>
+                                <a style="color: white;" id="trans" asp-controller="Customer" asp-action="Update"
+                                class="Down-Page"><strong>Edit Profile</strong></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

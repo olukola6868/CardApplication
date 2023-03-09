@@ -1,0 +1,27 @@
+@model IEnumerable<HarnyCardApplication.Dtos.CardDto>
+
+@if (@TempData["CardPin"] != null)
+{
+    <h4 style="background-color: white;">@TempData["CardPin"]</h4>
+}
+<div style="display: flex;">
+
+    @foreach (var item in @Model)
+    {
+        <form asp-action="BuyCard" class="card" style="width: 12rem;">
+
+            <input type="text" hidden name="Price" value="@item.CategoryPrice">
+            <input type="text" hidden name="NetworkName" value="@item.NetworkName">
+            <div class="card-body" style="margin: 10px;">
+                <h5 class="card-title" name="Price">@item.CategoryPrice</h5>
+                <p class="card-text" name="NetworkName">@item.NetworkName</p>
+                <button type="submit" class="btn btn-primary" asp-route-id ="@item.Id">Buy Card</button>
+            </div>
+        </form>
+        
+    }
+</div>
+ <div>
+    <a style="color: white;" id="trans" asp-controller="Customer" asp-action="FundWallet"
+    class="Down-Page"><strong>Fund Wallet</strong></a>
+</div>

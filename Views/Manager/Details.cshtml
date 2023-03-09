@@ -1,0 +1,34 @@
+@model HarnyCardApplication.Dtos.ManagerDto;
+
+
+<div>
+    <h6>Customer Profile</h6>
+    
+    <hr/>
+   <dl>
+         <dt>
+            <h4>@Html.DisplayNameFor(model => model.FirstName)</h4>
+        </dt>
+         <dd>
+            <h4>@Html.DisplayFor(model => model.FirstName) </h4>
+        </dd>
+         <dt>
+            <h4>@Html.DisplayNameFor(model => model.LastName)</h4>
+        </dt>
+         <dd>
+            <h4>@Html.DisplayFor(model => model.LastName) </h4>
+        </dd>
+        <dt>
+            <h4>@Html.DisplayNameFor(model => model.Email)</h4>
+        </dt>
+         <dd>
+            <h4>@Html.DisplayFor(model => model.Email) </h4>
+        </dd>
+        <dt>
+            <h4>@Html.DisplayNameFor(model => model.PhoneNumber)</h4>
+        </dt>
+         <dd>
+            <h4>@Html.DisplayFor(model => model.PhoneNumber) </h4>
+        </dd>
+   </dl>
+</div>
